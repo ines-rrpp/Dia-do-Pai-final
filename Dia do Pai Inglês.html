@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Father's Day Joke Generator</title>
+    <style>
+       body {
+        font-family: 'Arial', sans-serif;
+        text-align: center;
+        margin: 0;
+        height: 100vh; /* Full height of the viewport */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Vertically center */
+        align-items: center; /* Horizontally center */
+        background-image: url('images/myimage.jpg'); 
+    background-size: cover; 
+    background-position: center center; 
+    background-repeat: no-repeat;
+    }
+    #joke {
+        font-size: 36px; /* Make joke text larger */
+        margin-top: 20px;
+        color: #555;
+        font-weight: bold;
+    }
+    button {
+        padding: 20px 40px; /* Make button bigger */
+        font-size: 24px; /* Make button text bigger */
+        background-color: #f39c12;
+        border: none;
+        color: white;
+        cursor: pointer;
+        border-radius: 10px; /* Make button corners rounder */
+        transition: background-color 0.3s;
+        margin-top: 30px; /* Add space between button and joke */
+    }
+    button:hover {
+        background-color: #e67e22;
+    }
+       
+    </style>
+</head>
+<body>
+
+    <h1>Feliz Dia do Pai!</h1>
+    <h2>Da tua filha favorita</h2>
+    
+    <button id="getJoke">Carrega AQUI (várias vezes)</button>
+    <p id="joke"></p>
+
+    <script>
+         const jokes = [
+        "Why don’t skeletons fight each other? They don’t have the guts!",
+        "I only know 25 letters of the alphabet. I don’t know y.",
+        "What did the ocean say to the beach? Nothing, it just waved.",
+        "I'm reading a book on anti-gravity. It's impossible to put down!",
+        "I told my wife she was drawing her eyebrows too high. She looked surprised.",
+        "Why don’t eggs tell each other secrets? They might crack up!",
+        "Why did the scarecrow win an award? Because he was outstanding in his field!",
+        "What do you call fake spaghetti? An impasta!",
+        "Why can’t you hear a pterodactyl go to the bathroom? Because the ‘P’ is silent.",
+        "I used to play piano by ear, but now I use my hands.",
+        "What’s orange and sounds like a parrot? A carrot!",
+        "How do cows stay up to date with current events? They read the moos-paper.",
+        "Why don’t some couples go to the gym? Because some relationships don’t work out.",
+        "What did the big flower say to the little flower? Hey, bud!"
+    ];
+
+    document.getElementById("getJoke").addEventListener("click", function() {
+        // Check if there are any jokes left in the array
+        if (jokes.length === 0) {
+            alert("You've heard all the jokes! Resetting...");
+            // Reset the jokes list if empty
+            jokes.push(
+                "Why don’t skeletons fight each other? They don’t have the guts!",
+                "I only know 25 letters of the alphabet. I don’t know y.",
+                "What did the ocean say to the beach? Nothing, it just waved.",
+                "I'm reading a book on anti-gravity. It's impossible to put down!",
+                "I told my wife she was drawing her eyebrows too high. She looked surprised.",
+                "Why don’t eggs tell each other secrets? They might crack up!",
+                "Why did the scarecrow win an award? Because he was outstanding in his field!",
+                "What do you call fake spaghetti? An impasta!",
+                "Why can’t you hear a pterodactyl go to the bathroom? Because the ‘P’ is silent.",
+                "I used to play piano by ear, but now I use my hands.",
+                "What’s orange and sounds like a parrot? A carrot!",
+                "How do cows stay up to date with current events? They read the moos-paper.",
+                "Why don’t some couples go to the gym? Because some relationships don’t work out.",
+"Qual é o cereal favorito dos vampiros? Aveia.",
+"Porquê que os vírus não têm amigos? Porque são uma má influenza.",
+"The first 9/11 joke that you hear might not make you laugh. But then the second one hits.",
+"Qual é a comida mais sagrada de todas? O Amén Doim.",
+"What do you call a cult that is hard to get into? Difficult.",
+
+                "What did the big flower say to the little flower? Hey, bud!"
+            );
+        }
+        
+        // Randomly select a joke
+        const randomJokeIndex = Math.floor(Math.random() * jokes.length);
+        const randomJoke = jokes.splice(randomJokeIndex, 1)[0]; // Remove joke from array
+        
+        // Display the joke
+        document.getElementById("joke").textContent = randomJoke;
+    });
+    </script>
+
+</body>
+</html>
+
+
+ 
